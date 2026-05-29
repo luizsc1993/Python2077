@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios Jinja2</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; padding: 20px; color: #333; }
+        .aprovado { color: green; font-weight: bold; }
+        .reprovado { color: red; font-weight: bold; }
+        hr { border: 0; border-top: 1px solid #eee; margin: 20px 0; }
+    </style>
+</head>
+<body>
+
+    <h1>Olá, {{ nome }}</h1>
+
+    <hr>
+
+    <p><strong>Dados do Perfil:</strong> {{ nome }}, {{ idade }} anos.</p>
+
+    <hr>
+
+    <h3>Informações da Conta:</h3>
+    <ul>
+        <li><strong>Nome:</strong> {{ usuario.nome }}</li>
+        <li><strong>E-mail:</strong> {{ usuario.email }}</li>
+    </ul>
+
+    <hr>
+
+    <h3>Lista de Chamada:</h3>
+    <ul>
+        {% for aluno in alunos %}
+            <li>{{ aluno }}</li>
+        {% endfor %}
+    </ul>
+
+    <hr>
+
+    <h3>Resultado Escolar:</h3>
+    <p>
+        Nota: {{ nota }} <br>
+        Situação: 
+        {% if nota >= 7 %}
+            <span class="aprovado">Aprovado</span>
+        {% else %}
+            <span class="reprovado">Reprovado</span>
+        {% endif %}
+    </p>
+
+</body>
+</html>

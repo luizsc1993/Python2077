@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Agência Multiverso</title>
+</head>
+<body>
+    <main>
+        <h1>Para onde deseja escapar hoje?</h1>
+        <p>Escolha uma tag para iniciar o salto dimensional:</p>
+        
+        <div class="tag-container">
+            {% for tag in tags %}
+                <a href="{{ url_for('viajar', tag=tag) }}" class="tag">#{{ tag }}</a>
+            {% endfor %}
+        </div>
+    </main>
+</body>
+</html>

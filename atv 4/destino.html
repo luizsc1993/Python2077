@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>{{ destino.nome }}</title>
+</head>
+<body style="background-color: {{ destino.cor }}; color: white;">
+    <main class="card">
+        <h1>Bem-vindo a {{ destino.nome }}!</h1>
+        <p>{{ destino.descricao }}</p>
+        <hr>
+        <a href="/" class="btn-voltar">Voltar para a Terra</a>
+    </main>
+</body>
+</html>
